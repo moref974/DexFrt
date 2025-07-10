@@ -39,8 +39,8 @@ const TrendingTokens = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-[#1a0023] rounded-xl shadow-[0_0_15px_#f472b666]">
-      <h3 className="text-pink-300 font-semibold mb-3">Trending Tokens</h3>
+    <div className="p-4 bg-transparent rounded-xl ">
+      <h3 className="text-pink-300 text-center font-semibold mb-3">Trending Tokens</h3>
       {tokens.map((token) => (
         <div
           key={token.id}

@@ -93,7 +93,7 @@ function AddLiquidity() {
           {showTier && (
             <FeeTier
               isOpen={showTier}
-              onSelect={(tier) => (setSelectedTier(tier), setShowTier(false))}
+              onSelect={(tier) => {setSelectedTier(tier); setShowTier(false)}}
             />
           )}
         </div>

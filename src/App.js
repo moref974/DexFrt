@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddLiquidity from "./components/AddLiquidity";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Pool from "./components/Pool";
 import ViewLiquidity from "./utils/ViewLiquidity";
-import React, { useState } from "react";
 import { AppProvider } from "./context/AppContext";
 import ReactDOM from "react-dom/client";
 import "@rainbow-me/rainbowkit/styles.css";
@@ -43,6 +43,7 @@ function MyApp() {
               <Route path="/ViewLiquidity" element={<ViewLiquidity />}/>
               <Route path="/addliquidity" element={<AddLiquidity />} />
               <Route path="/AddLiq" element={<AddLiq />}></Route>
+              <Route path="/Pool" element={<Pool/>}></Route>
               <Route path="/swap" element={<Swap/>}></Route>
             </Routes>
             <ToastContainer

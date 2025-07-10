@@ -41,7 +41,7 @@ function PriceChart({ tokenName }) {
   const options = [7,14,30,360]
     if (!chartData) return <div className="text-white">Loading chart...</div>;
     return(
-<div className="w-full max-w-xl h-64 mx-auto border border-purple-400 shadow-from to-blue-300 border-r-purple-400 to-blue-400 shadow-lg">
+<div className="w-full max-w-xl h-64 mx-auto ">
   <div className="relative inline-block w-48">
   <button className="bg-transparent text-purple-500 px-3 py-2 w-full rounded-md text-left" onClick={()=> setmodal((prev)=> !prev)}>{days}Day</button>
   {modal && <ul className="flex justify-center items-center">

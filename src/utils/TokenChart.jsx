@@ -1,7 +1,6 @@
 import { fetchCurrentPrice } from "./FetchPrice";
 import React, { useState, useEffect, useRef } from "react";
 import { Line } from "react-chartjs-2";
-import moment from "moment";
 import {
   Chart as chartJS,
   LineElement,
@@ -29,16 +28,12 @@ const TokenChart = ({ tokenId = "ethereum" }) => {
   }, [tokenId]);
 
   useEffect(() => {
-    const interval = setInterval(async () => {
+    const fetch = async () => {
       const currentPriceData = await fetchCurrentPrice(tokenId);
-      setPrices((prevPrices) => {
-        const newPrices = [...prevPrices, currentPriceData];
-        return newPrices.slice(-50);
-      });
+      setPrices([currentPriceData])
       setLivePrice(currentPriceData.price);
-    }, 3000);
-
-    return () => clearInterval(interval);
+    };
+    fetch()
   }, [tokenId]);
 
   const data = {

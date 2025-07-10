@@ -39,6 +39,24 @@ const TokensBg = () => {
       name: "LINK",
       img: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
     },
+  {
+    id: "pepe",
+    name: "Pepe",
+    symbol: "PEPE",
+    img: "https://assets.coingecko.com/coins/images/29850/large/pepe-token.jpeg"
+  },
+      {
+    id: "uniswap",
+    name: "Uniswap",
+    symbol: "UNI",
+    img: "https://assets.coingecko.com/coins/images/12504/large/uniswap-uni.png",
+  },
+  {
+    id: "render-token",
+    name: "Render",
+    symbol: "RNDR",
+    img: "https://assets.coingecko.com/coins/images/11636/large/rndr.png"
+  },
   ];
 
   useEffect(() => {
@@ -49,7 +67,7 @@ const TokensBg = () => {
       .then((res) => res.json())
       .then((data) => setPrices(data))
       .catch((err) => console.error("Failed to fetch prices", err));
-  }, []);
+  }, [tokens]);
 
   return (
     <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
@@ -63,7 +81,7 @@ const TokensBg = () => {
           return (
             <div
               key={idx}
-              className={`relative w-20 h-20 pointer-events-auto animate-wave motion-delay-${idx * 100} group`}
+              className={`relative w-6 h-6 sm:w-20 sm:h-20 pointer-events-auto animate-wave motion-delay-${idx * 100} group`}
               style={{ animationDelay: `${idx * 0.4}s` }}
             >
               <img

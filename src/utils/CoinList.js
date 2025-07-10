@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 
-const CoinList = (ids = [])=>{
+const useCoinList = (ids = [])=>{
     const [prices, setPrices] = useState({})
     useEffect(()=>{
         if(ids.length === 0) return;
     const fetchPrice = async()=>{
     try{
-    const res = await fetch(`http://localhost:5000/api/prices?ids=${ids.join(',')}`)
+    const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids.join(',')}&vs_currencies=usd&include_24hr_change=true`)
     const data = await res.json()
     setPrices(data)
         }catch(error){
@@ -14,10 +14,8 @@ const CoinList = (ids = [])=>{
         }
     }
     fetchPrice()
-    const interval = setInterval(fetchPrice, 60000) // update every 1 minute 
-    return ()=> clearInterval(interval)
     },[ids]
 )
 return prices;
 }
-export default CoinList;
+export default useCoinList;

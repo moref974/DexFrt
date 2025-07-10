@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import tokens from "./Tokens";
-import cryptoIcons from "./cryptoIcons";
 
 const TokenSelectorModal = ({ isOpen, onClose, onSelect, title, network ,setNetwork}) => {
   const [filteredTokens, setFilteredTokens] = useState([]);
@@ -14,6 +13,7 @@ const TokenSelectorModal = ({ isOpen, onClose, onSelect, title, network ,setNetw
             name: token.name,
             forChart: token.forChart,
             symbol: token.symbol,
+            forDataBase: token.forDataBase,
             address: netData.address,
             tokenLogo: token.logUri,
             networkLogo: netData.logUri,
